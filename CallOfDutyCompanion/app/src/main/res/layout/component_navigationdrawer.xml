@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout android:id="@+id/AppDrawer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:openDrawer="start"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/componentToolBarContainer"
+            android:name="com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.components.AppToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            tools:layout="@layout/component_toolbar"/>
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/componentNavHostContainer"
+            android:name="com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.components.AppNavHost"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/component_navhost"
+            android:layout_below="@id/componentToolBarContainer"
+            android:layout_above="@id/componentNavigationBottomBarContainer"
+            />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/componentNavigationBottomBarContainer"
+            android:name="com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.components.AppBottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            tools:layout="@layout/component_bottombar"
+            />
+
+        <FrameLayout
+            android:id="@+id/reusableDialogsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/componentToolBarContainer"
+            android:layout_alignParentBottom="true"
+            />
+    </RelativeLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationDrawer"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:menu="@menu/navigation_drawer_menu"
+        android:layout_gravity="start"
+        />
+</androidx.drawerlayout.widget.DrawerLayout>

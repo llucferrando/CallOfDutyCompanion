@@ -1,4 +1,4 @@
-package com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.firebaseclasses
+package com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.firebaseclasses
 
 import android.app.Application
 import android.os.Bundle
