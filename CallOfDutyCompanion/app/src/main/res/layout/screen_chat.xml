@@ -37,7 +37,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/chat_messages_hint"
-                    app:startIconDrawable="@drawable/send_chat_icon"
+                    app:startIconDrawable="@drawable/image_chat_icon"
                     app:endIconMode="custom"
                     app:endIconDrawable="@drawable/send_chat_icon">
 
