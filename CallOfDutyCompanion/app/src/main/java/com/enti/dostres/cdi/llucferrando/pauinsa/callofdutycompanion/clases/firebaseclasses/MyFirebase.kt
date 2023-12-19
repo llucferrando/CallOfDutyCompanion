@@ -9,6 +9,8 @@ class MyFirebase {
         lateinit var authentication: MyFirebaseAuthentication
         val crashalytics = MyCrashalytics()
         val db = MyFirebaseDatabase()
+        val storage = MyFirebaseStorage()
+        val remoteConfig = MyFirebaseRemoteConfig()
         fun init(appContext: Application){
             authentication = MyFirebaseAuthentication(appContext)
             analytics = MyFirebaseAnalytics(appContext)

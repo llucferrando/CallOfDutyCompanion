@@ -7,7 +7,7 @@ import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.R
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.firebaseclasses.FB
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.models.DbMessage
 
-class MessagesAdapter(table: RecyclerView): RecyclerView.Adapter<MessageViewHolder>() {
+class MessagesAdapter(table:RecyclerView): RecyclerView.Adapter<MessageViewHolder>() {
     var messages = mutableListOf<DbMessage>()
 
     init{

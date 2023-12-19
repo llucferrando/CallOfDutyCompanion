@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
                 key("IsSubnromal", true)
                 key("Level Of Subnromality", 1900)
             }
+        setTheme(FB.remoteConfig.getTheme().themeId)
     }
 
 }
