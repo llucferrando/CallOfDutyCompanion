@@ -88,4 +88,12 @@
     <style name="Theme.CallOfDutyCompanion.SnackBar.TextView" parent="Widget.MaterialComponents.Snackbar.TextView">
         <item name="android:textColor">@color/baseLight</item>
     </style>
+    
+    <style name="Theme.CodCompanionSplashScreen" parent ="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name ="colorPrimary">@color/black</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.SplashScreen">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
 </resources>
