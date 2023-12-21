@@ -21,7 +21,7 @@ class AppNavHost : Fragment() {
 
     }
 
-    lateinit var navHost: NavController
+    lateinit var navHost : NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
