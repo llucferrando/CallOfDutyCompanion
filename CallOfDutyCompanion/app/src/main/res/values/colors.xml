@@ -4,6 +4,7 @@
     <color name="lighterGrey">#666267</color>
     <color name="baseLight">#e7e3e8</color>
     <color name="baseLightAlphaMedium">#D6D2C2</color>
+    <color name="noIconSelected">#6C6C6A</color>
     <color name="baseLightAlphaLow">#B3AFA2</color>
     <color name="lighterLight">#FAFAFA</color>
     <color name="darknessLight">#A39E8B</color>

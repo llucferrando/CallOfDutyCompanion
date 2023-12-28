@@ -33,22 +33,23 @@
     </style>
 
     <style name="CallOfDutyCompanion.Drawer" parent="Widget.MaterialComponents.NavigationView">
-        <item name="itemIconTint">@color/baseLight</item>
-        <item name="itemTextColor">@color/baseLight</item>
+        <item name="itemIconTint">?attr/colorPrimary</item>
+        <item name="itemTextColor">?attr/colorPrimary</item>
         <item name="elevation">@dimen/shadow_elevation</item>
     </style>
 
     <style name="CallOfDutyCompanion.Toolbar" parent="Widget.MaterialComponents.Toolbar">
-        <item name="android:background">@color/baseGrey</item>
+        <item name="android:background">?attr/colorSecondary</item>
         <item name="android:elevation">@dimen/shadow_elevation</item>
-        <item name="navigationIconTint">@color/baseLight</item>
+        <item name="navigationIconTint">?attr/colorPrimary</item>
     </style>
 
     <style name="CallOfDutyCompanion.BottomBar" parent="Widget.MaterialComponents.BottomNavigationView">
-        <item name="android:background">@color/baseGrey</item>
+        <item name="android:background">?attr/colorSecondary</item>
         <item name="android:elevation">@dimen/shadow_elevation</item>
+        <item name="itemIconTint">@color/selectables_buttons_color</item>
+        <item name="itemRippleColor">@color/baseLightAlphaMedium</item>
 
-        <item name="itemRippleColor">@color/baseLightAlphaLow</item>
     </style>
 
     <style name="CallOfDutyCompanion.CardView" parent="Widget.MaterialComponents.CardView">
@@ -78,7 +79,7 @@
     </style>
 
     <style name="Theme.CallOfDutyCompanion.FloatingButtonExtended" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
-
+        <item name="elevation">200dp</item>
     </style>
 
     <style name="Theme.CallOfDutyCompanion.Snackbar" parent="Widget.MaterialComponents.Snackbar">

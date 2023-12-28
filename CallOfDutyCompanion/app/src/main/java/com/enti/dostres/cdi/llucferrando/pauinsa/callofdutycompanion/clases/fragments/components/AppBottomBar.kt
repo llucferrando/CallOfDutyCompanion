@@ -41,12 +41,25 @@ class AppBottomBar : Fragment(){
 
             if(menuItem.itemId != bottomBar.selectedItemId) {
                 when (menuItem.itemId) {
-                    R.id.home_bar_button -> {
+                    R.id.news_bar_button -> {
                         AppNavHost.get().navHost.navigate(R.id.transition_chat_to_home)
                     }
+                    R.id.news_bar_button -> {
+                        AppNavHost.get().navHost.navigate(R.id.transition_chat_to_cdl)
+                    }
 
-                    R.id.chat_button_bar_button -> {
+                    R.id.community_button_bar_button -> {
                         AppNavHost.get().navHost.navigate(R.id.transition_home_to_chat)
+                    }
+                    R.id.community_button_bar_button -> {
+                        AppNavHost.get().navHost.navigate(R.id.transition_home_to_cdl)
+                    }
+
+                    R.id.community_button_bar_button -> {
+                        AppNavHost.get().navHost.navigate(R.id.transition_cdl_to_home)
+                    }
+                    R.id.community_button_bar_button -> {
+                        AppNavHost.get().navHost.navigate(R.id.transition_cdl_to_chat)
                     }
                 }
             }

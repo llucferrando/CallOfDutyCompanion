@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "922824120688-m13vtn89jt3o72gvnvm0n1jhlf7tdl6q.apps.googleusercontent.com",
+          "client_id": "922824120688-8831dd233op90tmjnjkraue8qbv9i1np.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion",
-            "certificate_hash": "2640d40e48231726b00121c809a204f7ca03f99f"
+            "certificate_hash": "027b0ff2f56bb97aa3d632bd199ff2dae2a8f0f1"
           }
         },
         {

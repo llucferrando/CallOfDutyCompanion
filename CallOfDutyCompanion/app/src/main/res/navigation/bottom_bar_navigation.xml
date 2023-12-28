@@ -7,11 +7,17 @@
     <fragment
         android:id="@+id/home_navigation_screen"
         android:name="com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.screens.HomeScreen"
-        android:label="@string/home_title"
+        android:label="@string/news_title"
         tools:layout="@layout/screen_home">
         <action
             android:id="@+id/transition_home_to_chat"
             app:destination="@id/chat_navigation_screen"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            />
+        <action
+            android:id="@+id/transition_home_to_cdl"
+            app:destination="@id/cdl_navigation_screen"
             app:enterAnim="@anim/enter_from_right"
             app:exitAnim="@anim/exit_to_left"
             />
@@ -20,14 +26,41 @@
     <fragment
         android:id="@+id/chat_navigation_screen"
         android:name="com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.screens.ChatScreen"
-        android:label="@string/home_title"
-        tools:layout="@layout/screen_home">
+        android:label="@string/news_title"
+        tools:layout="@layout/screen_chat">
 
         <action
             android:id="@+id/transition_chat_to_home"
             app:destination="@id/home_navigation_screen"
             app:enterAnim="@anim/enter_from_left"
             app:exitAnim="@anim/exit_to_right"
+            />
+        <action
+            android:id="@+id/transition_chat_to_cdl"
+            app:destination="@id/cdl_navigation_screen"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/cdl_navigation_screen"
+        android:name="com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.screens.CdlScreen"
+        android:label="@string/cdl_title"
+        tools:layout="@layout/cdl_screen">
+
+        <action
+            android:id="@+id/transition_cdl_to_home"
+            app:destination="@id/home_navigation_screen"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"
+            />
+        <action
+            android:id="@+id/transition_cdl_to_chat"
+            app:destination="@id/chat_navigation_screen"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
             />
 
     </fragment>

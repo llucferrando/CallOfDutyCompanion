@@ -2,9 +2,12 @@
     <string name="app_name">CallOfDutyCompanion</string>
     <string name="field_email_label">Email</string>
     <string name="field_password_label">Password</string>
-    <string name="home_title">Home</string>
-    <string name="chat_title">Chat</string>
+    <string name="news_title">NEWS</string>
+    <string name="cdl_title">CDL</string>
+    <string name="stats_title">STATS</string>
+    <string name="community_title">COMMUNITY</string>
     <string name="login_title">Login</string>
+    <string name="login_title_mayus">LOGIN</string>
     <string name="field_verify_password_label">Verify Password</string>
     <string name="login_button">Login</string>
     <string name="register_button">Register</string>
