@@ -21,6 +21,12 @@
             app:enterAnim="@anim/enter_from_right"
             app:exitAnim="@anim/exit_to_left"
             />
+        <action
+            android:id="@+id/transition_home_to_stats"
+            app:destination="@id/stats_navigation_screen"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            />
 
     </fragment>
     <fragment
@@ -37,6 +43,38 @@
             />
         <action
             android:id="@+id/transition_chat_to_cdl"
+            app:destination="@id/cdl_navigation_screen"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            />
+        <action
+            android:id="@+id/transition_chat_to_stats"
+            app:destination="@id/stats_navigation_screen"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            />
+
+    </fragment>
+    <fragment
+        android:id="@+id/stats_navigation_screen"
+        android:name="com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.screens.StatsScreen"
+        android:label="@string/stats_title"
+        tools:layout="@layout/stats_screen">
+
+        <action
+            android:id="@+id/transition_stats_to_home"
+            app:destination="@id/home_navigation_screen"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"
+            />
+        <action
+            android:id="@+id/transition_stats_to_chat"
+            app:destination="@id/chat_navigation_screen"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"
+            />
+        <action
+            android:id="@+id/transition_stats_to_cdl"
             app:destination="@id/cdl_navigation_screen"
             app:enterAnim="@anim/enter_from_right"
             app:exitAnim="@anim/exit_to_left"
@@ -62,8 +100,16 @@
             app:enterAnim="@anim/enter_from_left"
             app:exitAnim="@anim/exit_to_right"
             />
+        <action
+            android:id="@+id/transition_cdl_to_stats"
+            app:destination="@id/stats_navigation_screen"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"
+            />
 
     </fragment>
+
+
 
 
 

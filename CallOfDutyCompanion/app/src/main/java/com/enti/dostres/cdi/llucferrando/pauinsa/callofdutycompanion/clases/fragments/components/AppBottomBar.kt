@@ -52,6 +52,10 @@ class AppBottomBar : Fragment(){
                                 AppNavHost.get().navHost.navigate(R.id.transition_chat_to_home)
                                 Log.e("navigation","chat to home")
                             }
+                            R.id.stats_button_bar_button->{
+                                AppNavHost.get().navHost.navigate(R.id.transition_stats_to_home)
+                                Log.e("navigation","chat to home")
+                            }
                         }
                     }
 
@@ -65,6 +69,26 @@ class AppBottomBar : Fragment(){
                                 AppNavHost.get().navHost.navigate(R.id.transition_home_to_chat)
                                 Log.e("navigation","home to chat")
                             }
+                            R.id.stats_button_bar_button->{
+                                AppNavHost.get().navHost.navigate(R.id.transition_stats_to_chat)
+                                Log.e("navigation","chat to home")
+                            }
+                        }
+                    }
+                    R.id.stats_button_bar_button -> {
+                        when(bottomBar.selectedItemId){
+                            R.id.news_bar_button ->{
+                                AppNavHost.get().navHost.navigate(R.id.transition_home_to_stats)
+                                Log.e("navigation","home to cdl")
+                            }
+                            R.id.community_button_bar_button ->{
+                                AppNavHost.get().navHost.navigate(R.id.transition_chat_to_stats)
+                                Log.e("navigation","chat to cdl")
+                            }
+                            R.id.cdl_button_bar_button->{
+                                AppNavHost.get().navHost.navigate(R.id.transition_cdl_to_stats)
+                                Log.e("navigation","chat to home")
+                            }
                         }
                     }
 
@@ -77,6 +101,10 @@ class AppBottomBar : Fragment(){
                             R.id.community_button_bar_button ->{
                                 AppNavHost.get().navHost.navigate(R.id.transition_chat_to_cdl)
                                 Log.e("navigation","chat to cdl")
+                            }
+                            R.id.stats_button_bar_button->{
+                                AppNavHost.get().navHost.navigate(R.id.transition_stats_to_cdl)
+                                Log.e("navigation","chat to home")
                             }
                         }
                     }

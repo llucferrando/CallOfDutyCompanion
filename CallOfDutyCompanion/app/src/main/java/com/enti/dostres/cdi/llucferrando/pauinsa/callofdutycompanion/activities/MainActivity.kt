@@ -26,4 +26,5 @@ class MainActivity : AppCompatActivity() {
         setTheme(FB.remoteConfig.getTheme().themeId)
     }
 
+
 }
