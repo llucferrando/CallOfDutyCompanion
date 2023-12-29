@@ -1,5 +1,6 @@
 package com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.components
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,8 +9,10 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.drawerlayout.widget.DrawerLayout.DrawerListener
 import androidx.fragment.app.Fragment
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.R
+import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.activities.MainActivity
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.firebaseclasses.FB
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.screens.ContactUs
+import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.screens.HomeScreen
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.screens.LoginScreen
 import com.google.android.material.navigation.NavigationView
 
@@ -43,11 +46,9 @@ class AppDrawer: Fragment(), DrawerListener{
 
         drawer.addDrawerListener(this)
         navigationDrawer.setNavigationItemSelectedListener { menuItem ->
-
             when(menuItem.itemId)
             {
                 R.id.login_drawer_button -> {
-
                     openLogin()
                     drawer.close()
                 }
@@ -55,13 +56,21 @@ class AppDrawer: Fragment(), DrawerListener{
             }
             when(menuItem.itemId)
             {
-                R.id.contact_drawer_button -> {
-
-                    openContactUs()
+                R.id.return_drawer_button -> {
+                    returnToHome()
                     drawer.close()
                 }
-
             }
+            when(menuItem.itemId)
+            {
+                R.id.contact_drawer_button -> {
+                    openContactUs()
+                    drawer.close()
+
+                }
+            }
+
+
 
             true
         }
@@ -89,6 +98,11 @@ class AppDrawer: Fragment(), DrawerListener{
             .addToBackStack(null)
             .commit()
 
+
+    }
+    private fun returnToHome(){
+        val intent = Intent(activity, MainActivity::class.java)
+        startActivity(intent)
 
     }
 

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">CALL OF DUTY COMPANION</string>
     <string name="contact_title">Contact Us</string>
+    <string name="return_title">Return To App</string>
     <string name="field_email_label">Email</string>
     <string name="field_password_label">Password</string>
     <string name="news_title">NEWS</string>

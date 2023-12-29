@@ -16,10 +16,17 @@
             android:icon="@drawable/profile_icon"
             android:visible="false"
             />
+
         <item
             android:id="@+id/contact_drawer_button"
             android:title="@string/contact_title"
             android:icon="@drawable/contact_icon"
+
+            />
+        <item
+            android:id="@+id/return_drawer_button"
+            android:title="@string/return_title"
+            android:icon="@drawable/return_icon"
 
             />
     </group>
