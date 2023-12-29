@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/baseLight">
+    android:background="@color/black">
     <ImageView
         android:id="@+id/background_loginscreen"
         android:layout_width="match_parent"
@@ -19,104 +19,102 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:animateLayoutChanges="true"
         android:gravity="center"
-        android:animateLayoutChanges="true">
+        android:orientation="vertical">
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/usernameInputContainer"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_normal"
-            >
+            android:layout_margin="@dimen/margin_normal">
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/usernameInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:startIconDrawable="@drawable/email_icon"
                 android:hint="@string/field_email_label"
-                >
+                app:startIconDrawable="@drawable/email_icon">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    />
+                    android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/passwordInputContainer"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_normal"
-            >
+            android:layout_margin="@dimen/margin_normal">
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/passwordInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:startIconDrawable="@drawable/password_icon"
                 android:hint="@string/field_password_label"
                 app:endIconMode="password_toggle"
-                >
+                app:startIconDrawable="@drawable/password_icon">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    />
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/verifyPasswordInputContainer"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_normal"
             android:visibility="gone"
-            tools:visibility="visible"
-            >
+            tools:visibility="visible">
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/verifyPasswordInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:startIconDrawable="@drawable/password_icon"
                 android:hint="@string/field_verify_password_label"
                 app:endIconMode="password_toggle"
-                >
+                app:startIconDrawable="@drawable/password_icon">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    />
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/loginButton"
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/materialCardViewPassword"
-            android:layout_margin="@dimen/margin_normal"
+            android:layout_margin="@dimen/extra_tiny"
             android:text="@string/login_button" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/registerButton"
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/materialCardViewPassword"
-            android:layout_margin="@dimen/margin_normal"
+            android:layout_margin="@dimen/extra_tiny"
             android:text="@string/register_button" />
 
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_normal"
-            >
+            android:layout_margin="@dimen/extra_tiny">
 
             <com.google.android.gms.common.SignInButton
                 android:id="@+id/login_google_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_width="150dp"
+                android:layout_height="wrap_content" />
 
         </com.google.android.material.card.MaterialCardView>
+
 
 
     </LinearLayout>
