@@ -10,7 +10,7 @@ import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fire
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState:Bundle?){
         super.onCreate(savedInstanceState)
-        Thread.sleep(3000)
+        Thread.sleep(2000)
 
 
 

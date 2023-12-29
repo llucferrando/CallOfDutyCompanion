@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <color name="darkestGrey">#262427</color>
     <color name="baseGrey">#444045</color>
     <color name="lighterGrey">#666267</color>
     <color name="baseLight">#e7e3e8</color>

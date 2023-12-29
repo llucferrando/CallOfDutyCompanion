@@ -32,6 +32,7 @@
                 android:id="@+id/message_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 tool:text="Chat messsage looooooong"
                 android:layout_margin="@dimen/margin_message"
                 />

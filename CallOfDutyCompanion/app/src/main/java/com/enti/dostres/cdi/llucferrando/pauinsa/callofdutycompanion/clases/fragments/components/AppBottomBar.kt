@@ -1,6 +1,7 @@
 package com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.components
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -42,24 +43,42 @@ class AppBottomBar : Fragment(){
             if(menuItem.itemId != bottomBar.selectedItemId) {
                 when (menuItem.itemId) {
                     R.id.news_bar_button -> {
-                        AppNavHost.get().navHost.navigate(R.id.transition_chat_to_home)
-                    }
-                    R.id.news_bar_button -> {
-                        AppNavHost.get().navHost.navigate(R.id.transition_chat_to_cdl)
+                        when(bottomBar.selectedItemId){
+                            R.id.cdl_button_bar_button->{
+                                AppNavHost.get().navHost.navigate(R.id.transition_cdl_to_home)
+                                Log.e("navigation","cdl to home")
+                            }
+                            R.id.community_button_bar_button->{
+                                AppNavHost.get().navHost.navigate(R.id.transition_chat_to_home)
+                                Log.e("navigation","chat to home")
+                            }
+                        }
                     }
 
                     R.id.community_button_bar_button -> {
-                        AppNavHost.get().navHost.navigate(R.id.transition_home_to_chat)
-                    }
-                    R.id.community_button_bar_button -> {
-                        AppNavHost.get().navHost.navigate(R.id.transition_home_to_cdl)
+                        when(bottomBar.selectedItemId){
+                            R.id.cdl_button_bar_button ->{
+                                AppNavHost.get().navHost.navigate(R.id.transition_cdl_to_chat)
+                                Log.e("navigation","cdl to chat")
+                            }
+                            R.id.news_bar_button ->{
+                                AppNavHost.get().navHost.navigate(R.id.transition_home_to_chat)
+                                Log.e("navigation","home to chat")
+                            }
+                        }
                     }
 
-                    R.id.community_button_bar_button -> {
-                        AppNavHost.get().navHost.navigate(R.id.transition_cdl_to_home)
-                    }
-                    R.id.community_button_bar_button -> {
-                        AppNavHost.get().navHost.navigate(R.id.transition_cdl_to_chat)
+                    R.id.cdl_button_bar_button -> {
+                        when(bottomBar.selectedItemId){
+                            R.id.news_bar_button ->{
+                                AppNavHost.get().navHost.navigate(R.id.transition_home_to_cdl)
+                                Log.e("navigation","home to cdl")
+                            }
+                            R.id.community_button_bar_button ->{
+                                AppNavHost.get().navHost.navigate(R.id.transition_chat_to_cdl)
+                                Log.e("navigation","chat to cdl")
+                            }
+                        }
                     }
                 }
             }

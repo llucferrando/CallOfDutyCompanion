@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout.DrawerListener
 import androidx.fragment.app.Fragment
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.R
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.firebaseclasses.FB
+import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.screens.ContactUs
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.screens.LoginScreen
 import com.google.android.material.navigation.NavigationView
 
@@ -52,6 +53,15 @@ class AppDrawer: Fragment(), DrawerListener{
                 }
 
             }
+            when(menuItem.itemId)
+            {
+                R.id.contact_drawer_button -> {
+
+                    openContactUs()
+                    drawer.close()
+                }
+
+            }
 
             true
         }
@@ -66,6 +76,19 @@ class AppDrawer: Fragment(), DrawerListener{
         transaction.replace(R.id.reusableDialogsContainer, loginScreen)
             .addToBackStack(null)
             .commit()
+
+    }
+    fun openContactUs(){
+        val contactScreen = ContactUs()
+        val transaction = childFragmentManager.beginTransaction()
+        transaction.setCustomAnimations(
+            R.anim.enter_from_right, R.anim.exit_to_right,
+            R.anim.enter_from_right, R.anim.exit_to_right
+        )
+        transaction.replace(R.id.reusableDialogsContainer, contactScreen)
+            .addToBackStack(null)
+            .commit()
+
 
     }
 

@@ -8,7 +8,7 @@
     android:animateLayoutChanges="true"
     android:orientation="vertical"
     android:layout_gravity="center"
-    android:background="@color/baseGrey"
+    android:background="@color/white"
 
     >
 

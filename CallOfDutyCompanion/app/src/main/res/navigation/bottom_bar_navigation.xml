@@ -59,8 +59,8 @@
         <action
             android:id="@+id/transition_cdl_to_chat"
             app:destination="@id/chat_navigation_screen"
-            app:enterAnim="@anim/enter_from_right"
-            app:exitAnim="@anim/exit_to_left"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"
             />
 
     </fragment>
