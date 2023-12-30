@@ -14,7 +14,8 @@ import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.R
 import com.firebase.ui.auth.AuthUI.getApplicationContext
 import com.google.android.material.imageview.ShapeableImageView
 
-class CdlScreen: Fragment() {
+class CdlScreen: Fragment()
+{
     lateinit var fragmentView: View
 
     val cdlTeams by lazy { fragmentView.findViewById<LinearLayout>(R.id.cdl_screen) }
@@ -39,32 +40,33 @@ class CdlScreen: Fragment() {
     ): View? {
         fragmentView = inflater.inflate(R.layout.cdl_screen, container,false)
         return fragmentView
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         clickCDLTeam()
     }
-    private fun clickCDLTeam(){
-        atlfaze.setOnClickListener {  //goToUrl() }
-        bstnbreach.setOnClickListener { //goToUrl() }
-        roylravens.setOnClickListener { //goToUrl() }
-        seattlesurge.setOnClickListener { //goToUrl() }
-        nysubliners.setOnClickListener { //goToUrl() }
-        lathieves.setOnClickListener { //goToUrl() }
-        miamiheretics.setOnClickListener { //goToUrl() }
-        optictexas.setOnClickListener { //goToUrl() }
-        aglguerrillas.setOnClickListener { //goToUrl() }
-        minnesotarokkr.setOnClickListener { //goToUrl() }
-        torontoUltra.setOnClickListener { //goToUrl() }
-        vegaslegion.setOnClickListener { //goToUrl() }
+    private fun clickCDLTeam()
+    {
+        atlfaze.setOnClickListener {  goToUrl("https://faze.callofdutyleague.com/en-us/") }
+        bstnbreach.setOnClickListener { goToUrl("https://breach.callofdutyleague.com/en-us/") }
+        roylravens.setOnClickListener { goToUrl("https://ravens.callofdutyleague.com/en-us/") }
+        seattlesurge.setOnClickListener { goToUrl("https://surge.callofdutyleague.com/en-us/") }
+        nysubliners.setOnClickListener { goToUrl("https://subliners.callofdutyleague.com/en-us/") }
+        lathieves.setOnClickListener { goToUrl("https://thieves.callofdutyleague.com/en-us/") }
+        miamiheretics.setOnClickListener { goToUrl("https://heretics.callofdutyleague.com/en-us/") }
+        optictexas.setOnClickListener { goToUrl("https://optic.callofdutyleague.com/en-us/") }
+        aglguerrillas.setOnClickListener { goToUrl("https://guerrillas.callofdutyleague.com/en-us/") }
+        minnesotarokkr.setOnClickListener { goToUrl("https://rokkr.callofdutyleague.com/en-us/") }
+        torontoUltra.setOnClickListener { goToUrl("https://ultra.callofdutyleague.com/en-us/") }
+            vegaslegion.setOnClickListener { goToUrl("https://legion.callofdutyleague.com/en-us/") }
 
     }
-    /*private void goToUrl(string s){
-        try{
-            Uri uri = Uri.parse(s);
-            startActivity(new Intent(Intent.ACTION_VIEW,uri));
-        }
+    private fun goToUrl(string :String){
+        val urlIntent = Intent(android.content.Intent.ACTION_VIEW)
+        urlIntent.data=Uri.parse(string)
+        startActivity(urlIntent);
+    }
 
-        catch(Exception e){
-            Toast.makeText(getApplicationContext(),"Error 404",Toast.LENGTH_SHORT).show();
-        }
-
-    }*/
 }
