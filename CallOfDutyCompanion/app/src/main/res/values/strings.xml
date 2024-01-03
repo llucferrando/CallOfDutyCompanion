@@ -22,4 +22,5 @@
     <string name="profile_title">Profile\n</string>
     <string name="chat_upload_image_error">UploadImageError\n</string>
     <string name="emailContact">contact@activision.com</string>
+    <string name="default_push_channel_name">Generic Pushes</string>
 </resources>
