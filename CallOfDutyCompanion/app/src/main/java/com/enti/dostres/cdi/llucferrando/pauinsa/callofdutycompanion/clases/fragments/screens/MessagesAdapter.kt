@@ -58,7 +58,5 @@ class MessagesAdapter(table:RecyclerView): RecyclerView.Adapter<MessageViewHolde
         }, onFailure = {
             //TODO
         })
-
-
     }
 }
