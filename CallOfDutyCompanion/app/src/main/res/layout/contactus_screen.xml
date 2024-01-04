@@ -4,16 +4,14 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/baseLight">
+    android:background="@color/black">
     <ImageView
         android:id="@+id/background_loginscreen"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:srcCompat="@drawable/loginscreen"
         android:layout_gravity="center"
-
         >
-
     </ImageView>
 
     <LinearLayout

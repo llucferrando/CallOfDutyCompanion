@@ -7,9 +7,8 @@
         android:id="@+id/AppToolBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="@string/app_name"
+
         app:navigationIcon="@drawable/toolbar_navigation_icon"
-        app:menu="@menu/tool_bar_base_menu"
         >
 
 
