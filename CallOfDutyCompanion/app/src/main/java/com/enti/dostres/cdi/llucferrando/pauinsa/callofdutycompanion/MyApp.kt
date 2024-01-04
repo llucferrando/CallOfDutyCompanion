@@ -11,6 +11,8 @@ class MyApp : Application(){
         private lateinit var  instance: MyApp
         fun get()= instance
 
+        public val Context: MyApp get() = instance
+
     }
 
     override fun onCreate() {
