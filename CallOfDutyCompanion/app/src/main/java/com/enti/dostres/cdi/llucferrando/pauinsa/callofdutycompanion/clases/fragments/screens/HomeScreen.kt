@@ -8,11 +8,15 @@ import androidx.fragment.app.Fragment
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.R
 
 class HomeScreen: Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.screen_home, container,false)
-    }
+
+    lateinit var fragmentView: View
+        override fun onCreateView(
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
+        ): View? {
+
+            fragmentView = inflater.inflate(R.layout.screen_home, container, false)
+            return fragmentView
+        }
 }
