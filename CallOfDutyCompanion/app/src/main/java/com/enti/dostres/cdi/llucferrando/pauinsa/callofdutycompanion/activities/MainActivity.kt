@@ -5,6 +5,7 @@ import android.os.PersistableBundle
 import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.R
@@ -17,15 +18,13 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : FragmentActivity() {
 
     val usersTable by lazy { findViewById<RecyclerView>(R.id.users_table) }
     val newsTable by lazy { findViewById<RecyclerView>(R.id.news_table) }
     override fun onCreate(savedInstanceState:Bundle?){
         super.onCreate(savedInstanceState)
         Thread.sleep(2000)
-
-
 
         setContentView(R.layout.main_activity_screen)
 
@@ -52,14 +51,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        FB
+        /*FB
             .crashalytics
             .logSingleError("Error2"){
                 key("Name", "Lluc")
                 key("IsSubnromal", true)
                 key("Level Of Subnromality", 1900)
             }
-        setTheme(FB.remoteConfig.getTheme().themeId)
+        setTheme(FB.remoteConfig.getTheme().themeId)*/
     }
 
 

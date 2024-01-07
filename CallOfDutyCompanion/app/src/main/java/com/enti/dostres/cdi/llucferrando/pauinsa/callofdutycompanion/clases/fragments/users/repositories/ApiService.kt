@@ -14,21 +14,21 @@ import java.sql.Timestamp
 class ApiService : Repository {
 
     companion object {
-        const val BASE_URL = "https://api.steampowered.com"
-        const val API_KEY = "1c1a485d398d35aba0bbffacb95e64ed"
-        const val PRIVATE_KEY = "9da41f67a88ea1d093b0e89f9ba9a9783deadbb9"
+        const val BASE_URL = "https://api.steampowered.com/"
+        const val BASE_PARTNER_URL = "https://partner.steam-api.com/"
+        const val API_KEY = "4C9144FAD419AEED4D5D70273E2BA2C7"
 
         val Timestamp: String get() = Timestamp(System.currentTimeMillis()).time.toString()
 
         val Hash: String get() {
-            val input = "$Timestamp$PRIVATE_KEY$API_KEY"
+            val input = "$Timestamp$API_KEY"
             val md = MessageDigest.getInstance("MD5")
             return BigInteger(1, md.digest(input.toByteArray())).toString(16).padStart(32, '0')
         }
 
         val UsersApiService: RetrofitUsersApiService by lazy {
             Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(BASE_PARTNER_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(RetrofitUsersApiService::class.java)
@@ -43,11 +43,11 @@ class ApiService : Repository {
     }
 
     interface RetrofitUsersApiService {
-        @GET("ISteamNews/GetNewsForApp/v2/")
+        @GET("ISteamUserStats/GetGlobalStatsForGame/v1/")
         suspend fun GetUsers(
-            @Query("ts") timestamp: String = Timestamp,
-            @Query("apikey") apiKey: String = API_KEY,
-            @Query("hash") hash: String = Hash
+            @Query("gameId") gameId: Int = 2000950,
+            @Query("count") count: Int = 1,
+            @Query("stat") stat: String = "hoursPlayed",
         ) : Response<CharactersResponse>
     }
 
