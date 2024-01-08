@@ -63,8 +63,8 @@ class ChatScreen : Fragment() {
         }
         val inputText= messagesInput.editText?.text.toString()
         val text = if(inputText!="")inputText else null
-        messageAdapter.addMessage(text,null)
-        messagesInput.editText?.text?.clear()
+        //messageAdapter.addMessage(text,null)
+        //messagesInput.editText?.text?.clear()
 
         val imageUri = currentImageUri ?:kotlin.run{
             messageAdapter.addMessage(text,null)

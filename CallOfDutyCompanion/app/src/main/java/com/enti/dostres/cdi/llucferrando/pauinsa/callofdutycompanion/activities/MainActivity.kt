@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
         if(ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED){
             FirebaseMessaging.getInstance().token.addOnSuccessListener { token ->
-                Log.d("Token","Token::> " + token)
+                Log.d("TokenMalo","Token::> " + token)
 
             }.addOnFailureListener {
                 //TODO ERROR
