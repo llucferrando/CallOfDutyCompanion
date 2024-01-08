@@ -10,6 +10,7 @@ class MyApp : Application(){
     companion object{
         private lateinit var  instance: MyApp
         fun get()= instance
+        public val Context: MyApp get() = instance
 
     }
 

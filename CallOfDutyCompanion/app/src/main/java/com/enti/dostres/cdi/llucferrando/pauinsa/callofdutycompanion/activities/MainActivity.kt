@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState:Bundle?){
         super.onCreate(savedInstanceState)
         Thread.sleep(2000)
+        setContentView(R.layout.main_activity_screen)
 
         setContentView(R.layout.main_activity_screen)
 
