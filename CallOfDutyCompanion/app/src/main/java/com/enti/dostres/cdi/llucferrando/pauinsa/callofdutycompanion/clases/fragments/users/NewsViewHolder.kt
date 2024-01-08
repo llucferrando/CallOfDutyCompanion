@@ -10,8 +10,12 @@ class NewsViewHolder(view: View) : ViewHolder(view) {
     val title by lazy { view.findViewById<TextView>(R.id.news_title) }
     val content by lazy { view.findViewById<TextView>(R.id.news_content) }
 
-    fun SetupWith(new: NewsData) {
-        title.text = new.newTitle
-        content.text = new.newContent
+
+     fun SetupWith(new: NewsData) {
+        title.text = new.title
+        content.text = new.contents
+        println("HOLA")
+        println(new.title)
+        println(new.contents)
     }
 }

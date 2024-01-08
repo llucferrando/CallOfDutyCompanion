@@ -54,7 +54,7 @@ class ApiService : Repository {
     interface RetrofitNewsApiService {
         @GET("ISteamNews/GetNewsForApp/v2/")
         suspend fun GetNews(
-            @Query("gameId") gameId: Int = 2000950,
+            @Query("appid") gameId: Int = 2000950,
         ) : Response<NewsResponse>
     }
 
@@ -80,6 +80,7 @@ class ApiService : Repository {
     override suspend fun GetNews(): MutableList<NewsData> {
 
         val response = NewsApiService.GetNews()
+        println(response)
 
         if(response.isSuccessful) {
 
