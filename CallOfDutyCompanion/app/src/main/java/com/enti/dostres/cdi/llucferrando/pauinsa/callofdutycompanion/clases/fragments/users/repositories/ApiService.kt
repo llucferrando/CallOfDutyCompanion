@@ -1,7 +1,11 @@
 package com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.users.repositories
 
+import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.R
+import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.firebaseclasses.FB
+import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.components.AppDrawer
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.users.NewsData
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.users.UsersData
+import com.google.android.material.snackbar.Snackbar
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -71,12 +75,18 @@ class ApiService : Repository {
             response.body()?.charactersData?.usersList?.let { users ->
                 return users
             } ?: kotlin.run {
-                //Controlar el error de alguna forma
+                FB.crashalytics.logSingleError("API Error"){
+                    key("data", response.body()?.charactersData?.usersList.toString())
+                    key("Requested", "stats" )
+                }
                 return mutableListOf()
             }
 
         } else {
-            //Controlar el error de alguna forma
+            FB.crashalytics.logSingleError("API Error"){
+                key("Response result", response.toString())
+                key("Requested", "stats" )
+            }
             return mutableListOf()
         }
     }
@@ -91,12 +101,20 @@ class ApiService : Repository {
             response.body()?.newsItems?.newsData?.let { news ->
                 return news
             } ?: kotlin.run {
-                //Controlar el error de alguna forma
+                FB.crashalytics.logSingleError("API Error"){
+                    key("data", response.body()?.newsItems?.newsData.toString())
+                    key("Requested", "news" )
+                }
+
                 return mutableListOf()
             }
 
         } else {
-            //Controlar el error de alguna forma
+            FB.crashalytics.logSingleError("API Error"){
+                key("Response result", response.toString())
+                key("Requested", "news")
+            }
+
             return mutableListOf()
         }
     }
