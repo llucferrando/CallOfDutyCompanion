@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.MyApp
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.R
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.users.Provider
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.users.UsersAdapter
@@ -26,7 +25,7 @@ class StatsScreen: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        fragmentView = inflater.inflate(R.layout.screen_home, container, false)
+        fragmentView = inflater.inflate(R.layout.stats_screen, container, false)
         return fragmentView
     }
 
@@ -35,9 +34,8 @@ class StatsScreen: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         usersTable = view.findViewById(R.id.users_table)
-        println(usersTable.toString())
 
-        usersTable.layoutManager = LinearLayoutManager(MyApp.Context)
+        usersTable.layoutManager = LinearLayoutManager(requireContext())
 
         val repository = ApiService()
 

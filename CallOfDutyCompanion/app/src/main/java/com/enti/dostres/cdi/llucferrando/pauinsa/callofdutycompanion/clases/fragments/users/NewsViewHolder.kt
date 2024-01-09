@@ -1,5 +1,7 @@
 package com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.users
 
+import android.os.Build
+import android.text.Html
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -13,7 +15,8 @@ class NewsViewHolder(view: View) : ViewHolder(view) {
 
      fun SetupWith(new: NewsData) {
         title.text = new.title
-        content.text = new.contents
+         content.text = Html.fromHtml(new.contents).toString()
+
         println("HOLA")
         println(new.title)
         println(new.contents)

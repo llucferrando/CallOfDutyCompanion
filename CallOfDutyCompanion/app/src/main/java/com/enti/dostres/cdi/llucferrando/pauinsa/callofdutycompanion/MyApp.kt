@@ -24,6 +24,4 @@ class MyApp : Application(){
         val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(focusedView.windowToken,0)
     }
-
-
 }

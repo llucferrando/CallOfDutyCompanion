@@ -1,7 +1,11 @@
 package com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.users.repositories
 
+import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.R
+import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.firebaseclasses.FB
+import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.components.AppDrawer
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.users.NewsData
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.users.UsersData
+import com.google.android.material.snackbar.Snackbar
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -45,34 +49,44 @@ class ApiService : Repository {
     interface RetrofitUsersApiService {
         @GET("ISteamUserStats/GetGlobalStatsForGame/v1/")
         suspend fun GetUsers(
-            @Query("gameId") gameId: Int = 2000950,
+            @Query("appid") gameId: Int = 1938090,
             @Query("count") count: Int = 1,
-            @Query("stat") stat: String = "hoursPlayed",
+            @Query("name") stat: String = "MostKills",
+            @Query("key") key: String = "19C04CE508252F186349B6A55415557E",
+            @Query("steamid") steamid: String = "pinza_115"
         ) : Response<CharactersResponse>
     }
 
     interface RetrofitNewsApiService {
         @GET("ISteamNews/GetNewsForApp/v2/")
         suspend fun GetNews(
-            @Query("appid") gameId: Int = 2000950,
+            @Query("appid") gameId: Int = 1938090,
+            @Query("count") count: Int = 100,
         ) : Response<NewsResponse>
     }
 
     override suspend fun GetUsers(): MutableList<UsersData> {
 
         val response = UsersApiService.GetUsers()
+        println(response)
 
         if(response.isSuccessful) {
 
             response.body()?.charactersData?.usersList?.let { users ->
                 return users
             } ?: kotlin.run {
-                //Controlar el error de alguna forma
+                FB.crashalytics.logSingleError("API Error"){
+                    key("data", response.body()?.charactersData?.usersList.toString())
+                    key("Requested", "stats" )
+                }
                 return mutableListOf()
             }
 
         } else {
-            //Controlar el error de alguna forma
+            FB.crashalytics.logSingleError("API Error"){
+                key("Response result", response.toString())
+                key("Requested", "stats" )
+            }
             return mutableListOf()
         }
     }
@@ -84,15 +98,23 @@ class ApiService : Repository {
 
         if(response.isSuccessful) {
 
-            response.body()?.newsData?.newsList?.let { news ->
+            response.body()?.newsItems?.newsData?.let { news ->
                 return news
             } ?: kotlin.run {
-                //Controlar el error de alguna forma
+                FB.crashalytics.logSingleError("API Error"){
+                    key("data", response.body()?.newsItems?.newsData.toString())
+                    key("Requested", "news" )
+                }
+
                 return mutableListOf()
             }
 
         } else {
-            //Controlar el error de alguna forma
+            FB.crashalytics.logSingleError("API Error"){
+                key("Response result", response.toString())
+                key("Requested", "news")
+            }
+
             return mutableListOf()
         }
     }

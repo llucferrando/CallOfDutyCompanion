@@ -4,6 +4,7 @@ import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.frag
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.users.UsersData
 import com.google.gson.annotations.SerializedName
 
-data class NewsResponse(val code: Int, @SerializedName("newsitems") val newsData: NewsResponseData)
+data class NewsResponse(@SerializedName("appnews") val newsItems: NewsItemsResponse)
+data class NewsItemsResponse(@SerializedName("newsitems") val newsData: MutableList<NewsData>)
 
-data class NewsResponseData( val count: Int, @SerializedName("appnews") val newsList: MutableList<NewsData>)
+//data class NewsResponseData( val count: Int, @SerializedName("appnews") val newsList: MutableList<NewsData>)
