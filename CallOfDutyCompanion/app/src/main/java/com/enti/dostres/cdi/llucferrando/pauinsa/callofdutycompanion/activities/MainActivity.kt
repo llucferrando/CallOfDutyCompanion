@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         Thread.sleep(2000)
         setContentView(R.layout.main_activity_screen)
 
-        setContentView(R.layout.main_activity_screen)
 
         FB
             .crashalytics
@@ -66,7 +65,6 @@ class MainActivity : AppCompatActivity() {
         }else{
             requestNotificationPermissionLauncher.launch(permission)
         }
-
 
     }
 }

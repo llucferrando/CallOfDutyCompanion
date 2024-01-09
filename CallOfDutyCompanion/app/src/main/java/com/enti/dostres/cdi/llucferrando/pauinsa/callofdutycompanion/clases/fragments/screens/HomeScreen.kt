@@ -7,11 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.MyApp
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.R
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.users.NewsAdapter
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.users.Provider
-import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.users.UsersAdapter
 import com.enti.dostres.cdi.llucferrando.pauinsa.callofdutycompanion.clases.fragments.users.repositories.ApiService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -36,7 +34,6 @@ class HomeScreen: Fragment() {
 
         newsTable = view.findViewById(R.id.news_table)
 
-
         newsTable.layoutManager = LinearLayoutManager(requireContext())
 
         val repository = ApiService()
@@ -50,5 +47,7 @@ class HomeScreen: Fragment() {
                 newsTable.adapter = NewsAdapter(news)
             }
         }
+
+
     }
 }

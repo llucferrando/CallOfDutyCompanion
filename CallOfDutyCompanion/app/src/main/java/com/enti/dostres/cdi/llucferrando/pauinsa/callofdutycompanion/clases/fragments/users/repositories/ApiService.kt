@@ -45,22 +45,26 @@ class ApiService : Repository {
     interface RetrofitUsersApiService {
         @GET("ISteamUserStats/GetGlobalStatsForGame/v1/")
         suspend fun GetUsers(
-            @Query("gameId") gameId: Int = 2000950,
+            @Query("appid") gameId: Int = 1938090,
             @Query("count") count: Int = 1,
-            @Query("stat") stat: String = "hoursPlayed",
+            @Query("name") stat: String = "MostKills",
+            @Query("key") key: String = "19C04CE508252F186349B6A55415557E",
+            @Query("steamid") steamid: String = "pinza_115"
         ) : Response<CharactersResponse>
     }
 
     interface RetrofitNewsApiService {
         @GET("ISteamNews/GetNewsForApp/v2/")
         suspend fun GetNews(
-            @Query("appid") gameId: Int = 2000950,
+            @Query("appid") gameId: Int = 1938090,
+            @Query("count") count: Int = 10,
         ) : Response<NewsResponse>
     }
 
     override suspend fun GetUsers(): MutableList<UsersData> {
 
         val response = UsersApiService.GetUsers()
+        println(response)
 
         if(response.isSuccessful) {
 
@@ -84,7 +88,7 @@ class ApiService : Repository {
 
         if(response.isSuccessful) {
 
-            response.body()?.newsData?.newsList?.let { news ->
+            response.body()?.newsItems?.newsData?.let { news ->
                 return news
             } ?: kotlin.run {
                 //Controlar el error de alguna forma
