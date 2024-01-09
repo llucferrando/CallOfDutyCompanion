@@ -57,7 +57,7 @@ class ApiService : Repository {
         @GET("ISteamNews/GetNewsForApp/v2/")
         suspend fun GetNews(
             @Query("appid") gameId: Int = 1938090,
-            @Query("count") count: Int = 10,
+            @Query("count") count: Int = 100,
         ) : Response<NewsResponse>
     }
 

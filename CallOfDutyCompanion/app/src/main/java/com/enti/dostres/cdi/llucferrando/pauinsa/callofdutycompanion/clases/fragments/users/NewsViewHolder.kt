@@ -15,7 +15,7 @@ class NewsViewHolder(view: View) : ViewHolder(view) {
 
      fun SetupWith(new: NewsData) {
         title.text = new.title
-        content.text = new.contents
+         content.text = Html.fromHtml(new.contents).toString()
 
         println("HOLA")
         println(new.title)
