@@ -32,8 +32,8 @@
                 android:textSize="@dimen/medium"
                 android:layout_marginTop="@dimen/medium"
                 android:layout_marginBottom="@dimen/margin_normal"
-                android:layout_marginLeft="@dimen/tiny"
-                android:layout_marginRight="@dimen/tiny"
+                android:layout_marginLeft="@dimen/small"
+                android:layout_marginRight="@dimen/small"
                 />
         </LinearLayout>
 
